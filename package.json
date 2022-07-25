@@ -1,0 +1,24 @@
+{
+  "name": "repositorios-de-livros-node",
+  "version": "1.0.0",
+  "description": "Criação de End-points com Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogoX451/Repositorios-de-Livros-Node.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogoX451/Repositorios-de-Livros-Node.js/issues"
+  },
+  "homepage": "https://github.com/diogoX451/Repositorios-de-Livros-Node.js#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
