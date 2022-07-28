@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const router = require("./router/router");
+//redenrizar arquivo html
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(bodyParser.json());
 app.use(express.json());
 const livros = [
@@ -11,6 +15,7 @@ const livros = [
   },
 ];
 app.get("/livros", (req, res) => {
+  res.render("index");
   res.json(livros);
 });
 app.post("/adicionarLivros", (req, res) => {
