@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 const livros = [
   {
-    id: 1,
-    name: "O Senhor dos Anéis",
+    book: "O Senhor dos Anéis",
+    author: "J.R.R. Tolkien",
   },
 ];
 app.get("/livros", (req, res) => {
