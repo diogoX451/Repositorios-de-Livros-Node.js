@@ -11,15 +11,22 @@
     "type": "git",
     "url": "git+https://github.com/diogoX451/Repositorios-de-Livros-Node.js.git"
   },
-  "author": "",
+  "author": "Diogo Almeida",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/diogoX451/Repositorios-de-Livros-Node.js/issues"
   },
   "homepage": "https://github.com/diogoX451/Repositorios-de-Livros-Node.js#readme",
   "dependencies": {
+    "dotenv": "^16.0.2",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }
