@@ -1,15 +1,15 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 3000;
-const routes = require("./router/router");
+const router = require("./router/router");
+require("./DataBase/db");
+const port = process.env.PORT || 5432;
 //renderizar arquivo html
 app.set("view engine", "ejs");
 app.set("views", "./views");
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(routes);
+app.use(router);
 app.use(express.json());
 // rota para adicionar livros
 
@@ -32,4 +32,5 @@ app.use(express.json());
 //   livros.splice(req.params.id);
 //   res.json(livros);
 // });
+
 app.listen(port);
