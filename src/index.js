@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const router = require("./router/router");
 require("./DataBase/db");
-const port = process.env.PORT || 5432;
+const port = process.env.PORT || 3000;
 //renderizar arquivo html
 app.set("view engine", "ejs");
 app.set("views", "./views");

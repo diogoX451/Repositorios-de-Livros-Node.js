@@ -1,20 +1,16 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("author", {
+    return queryInterface.createTable("book_author", {
       id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         primaryKey: true,
         autoIncrement: true,
-      },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        varchar: 255,
       },
     });
   },
 
   down: (queryInterface, Sequelize) => {
-    queryInterface.dropTable("author");
+    queryInterface.dropTable("book_author");
   },
 };

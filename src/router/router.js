@@ -1,18 +1,7 @@
 const express = require("express");
 const router = require("express").Router();
+const BookController = require("../controller/BookController");
 
-router
-  .get("/", (req, res) => {
-    res.send("RODOUUU");
-  })
-  .post("/", (req, res) => {
-    res.send("RODOUUU");
-  })
-  .put("/", (req, res) => {
-    res.send("RODOUUU");
-  })
-  .delete("/", (req, res) => {
-    res.send("RODOUUU");
-  });
-
+router.post("/cadBook", BookController.postBook);
+router.get("/repo-book", BookController.index);
 module.exports = router;
