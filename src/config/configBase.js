@@ -1,4 +1,5 @@
 require("dotenv").config(); // this is important!
+
 module.exports = {
   dialect: "postgres",
   dialectOptions: {
@@ -7,11 +8,11 @@ module.exports = {
       rejectUnauthorized: false,
     },
   },
-  host: "ec2-35-168-122-84.compute-1.amazonaws.com",
+  host: process.env.HOST,
   username: "divyboeqzuebgy",
   port: 5432,
   database: "d6ba737qa894tc",
-  password: "e4e315af75873f431e0b6f230567ffdea1409d28ca078b79ac452e1520967e31",
+  password: process.env.PASSWORD,
   define: {
     timestamps: true,
     underscored: true,

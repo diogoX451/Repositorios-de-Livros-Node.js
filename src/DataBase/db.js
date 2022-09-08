@@ -1,11 +1,17 @@
 //conectar banco de dados com sequelize
 require("dotenv").config();
 const Sequelize = require("sequelize");
+const consign = require("consign");
 const Book = require("../models/Book");
-
+const Author = require("../models/Author");
 const dbConfig = require("../config/configBase");
 const sequelize = new Sequelize(dbConfig);
-Book.init(sequelize);
+
+consign()
+  .include("../models")
+  .then(Book.init(sequelize))
+  .then(Author.init(sequelize));
+
 sequelize
   .authenticate()
   .then(() => {

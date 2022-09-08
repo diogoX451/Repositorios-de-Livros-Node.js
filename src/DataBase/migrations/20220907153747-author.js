@@ -6,6 +6,13 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
+      title_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: "books", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "RESTRICT",
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
