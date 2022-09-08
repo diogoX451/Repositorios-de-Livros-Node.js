@@ -11,5 +11,9 @@ class Auhtor extends Model {
       }
     );
   }
+  //associaçao
+  static associate(models) {
+    this.belongsTo(models.Book, { foreignKey: "title_id", as: "title" });
+  }
 }
 module.exports = Auhtor;

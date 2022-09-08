@@ -8,9 +8,10 @@ const dbConfig = require("../config/configBase");
 const sequelize = new Sequelize(dbConfig);
 
 consign()
-  .include("../models")
+  .include("models")
   .then(Book.init(sequelize))
-  .then(Author.init(sequelize));
+  .then(Author.init(sequelize))
+  .then(Author.associate(sequelize.models));
 
 sequelize
   .authenticate()
