@@ -1,4 +1,14 @@
 "use strict";
+//fazer a relação entre livros e autores
+//nesta migration
+// User -- Livro -- Autor
+// 1 -- n -- 1
+
+//migration entre author e books
+// Author -- Livro
+// 1 -- n
+// Livro -- Autor
+// 1 -- 1
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
