@@ -19,6 +19,13 @@ module.exports = {
         autoIncrement: true, //auto incremento
         allowNull: false,
       },
+      author_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: "author", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       title: {
         type: Sequelize.STRING,
         allowNull: false,
