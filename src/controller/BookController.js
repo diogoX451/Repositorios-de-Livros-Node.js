@@ -3,12 +3,20 @@ const Author = require("../models/Author");
 module.exports = {
   async index(req, res) {
     const { author_id } = req.params;
-    const books = await Book.findByPk(author_id, {
-      include: { association: "authors" },
+    const authors = await Author.findByPk(author_id, {
+      include: { association: "author" },
     });
-    return res.json(books);
+    return res.json(authors);
   },
-
+  async deletBook(req, res) {
+    const { id } = req.params;
+    const book = await Book.findByPk(id);
+    if (!book) {
+      return res.status(400).json({ error: "Book not found" });
+    }
+    await book.destroy();
+    return res.json(book);
+  },
   async postBook(req, res) {
     const { author_id } = req.params;
     const { title } = req.body;

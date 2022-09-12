@@ -13,7 +13,7 @@ class Book extends Model {
   }
   //associaçao
   static associate(models) {
-    this.belongsTo(models.Auhtor, { foreignKey: "author_id", as: "title" });
+    this.hasOne(models.Auhtor, { foreignKey: "author_id", as: "title" });
   }
 }
 module.exports = Book;
