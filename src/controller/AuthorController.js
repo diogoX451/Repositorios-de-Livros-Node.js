@@ -23,4 +23,14 @@ module.exports = {
     const author = await Author.create(name);
     return res.json(author);
   },
+  // altera nome do author
+  async updateAuhtor(req, res) {
+    const { author_id } = req.params;
+    const name = req.body;
+    const author = await Author.findByPk(author_id);
+    if (!author) {
+      return res.status(400).json({ error: "Author not found" });
+    }
+    return res.json(await author.update(name));
+  },
 };
