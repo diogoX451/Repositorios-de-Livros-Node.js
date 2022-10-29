@@ -11,7 +11,8 @@ consign()
   .include("models")
   .then(Book.init(sequelize))
   .then(Author.init(sequelize))
-  .then(Author.associate(sequelize.models));
+  .then(Author.associate(sequelize.models))
+  .then(Book.associate(sequelize.models));
 
 sequelize
   .authenticate()
