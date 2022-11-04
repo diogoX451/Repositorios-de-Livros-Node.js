@@ -1,18 +1,20 @@
-require("dotenv").config(); // this is important!
-
+require("dotenv").config(); // this is important
+export default {
+  host,
+};
 module.exports = {
   dialect: "postgres",
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
-    },
-  },
+  // dialectOptions: {
+  //   ssl: {
+  //     require: false,
+  //     rejectUnauthorized: true,
+  //   },
+  // },
   host: "localhost",
-  username: "postgres",
-  port: 5432,
-  database: "postgres",
-  password: "12345",
+  username: "admin",
+  port: 5433,
+  database: "level-acess",
+  password: "admin123",
   define: {
     timestamps: true,
     underscored: true,
