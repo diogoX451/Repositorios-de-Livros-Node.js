@@ -1,7 +1,20 @@
 ---
 version: '3'
 services:
+  web:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    command: yarn start 
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+      - ./:/home/node/app
+    ports:
+      - "3000:3000"
+    
   postgres:
+    container_name: apiBook
     image: postgres:10.5
     restart: always
     environment:
@@ -29,3 +42,5 @@ services:
       - postgres
     volumes:
       - ./volumes/redis-data:/var/lib/postgresql/data
+  
+

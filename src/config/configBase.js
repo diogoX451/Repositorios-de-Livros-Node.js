@@ -1,7 +1,4 @@
 require("dotenv").config(); // this is important
-export default {
-  host,
-};
 module.exports = {
   dialect: "postgres",
   // dialectOptions: {
@@ -10,9 +7,9 @@ module.exports = {
   //     rejectUnauthorized: true,
   //   },
   // },
-  host: "localhost",
+  host: "apiBook",
   username: "admin",
-  port: 5433,
+  port: 5432,
   database: "level-acess",
   password: "admin123",
   define: {
