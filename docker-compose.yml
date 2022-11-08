@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     command: yarn start 
+    restart: always
     volumes:
       - .:/usr/app/
       - /usr/app/node_modules
