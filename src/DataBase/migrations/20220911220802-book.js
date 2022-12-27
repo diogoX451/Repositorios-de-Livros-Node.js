@@ -26,6 +26,13 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
+      image_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: { model: "images", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       title: {
         type: Sequelize.STRING,
         allowNull: false,

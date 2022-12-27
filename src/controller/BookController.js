@@ -1,5 +1,6 @@
 const Book = require("../models/Book");
 const Author = require("../models/Author");
+const multer = require("multer");
 module.exports = {
   async index(req, res) {
     const { id } = req.params;
@@ -33,6 +34,6 @@ module.exports = {
       title,
       author_id,
     });
-    return res.json(book);
+    return res.json(book, image);
   },
 };

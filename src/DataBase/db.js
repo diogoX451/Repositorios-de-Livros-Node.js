@@ -3,6 +3,7 @@ require("dotenv").config();
 const Sequelize = require("sequelize");
 const consign = require("consign");
 const Book = require("../models/Book");
+const Image = require("../models/Image");
 const Author = require("../models/Author");
 const dbConfig = require("../config/configBase");
 const sequelize = new Sequelize(dbConfig);
@@ -12,7 +13,9 @@ consign()
   .then(Book.init(sequelize))
   .then(Author.init(sequelize))
   .then(Author.associate(sequelize.models))
-  .then(Book.associate(sequelize.models));
+  .then(Book.associate(sequelize.models))
+  .then(Image.init(sequelize))
+  .then(Image.associate(sequelize.models));
 
 sequelize
   .authenticate()

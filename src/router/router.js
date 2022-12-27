@@ -1,7 +1,13 @@
-const express = require("express");
+const multer = require("multer");
+const imageUpload = multer({
+  dest: "images",
+});
 const router = require("express").Router();
 const BookController = require("../controller/BookController");
 const AuthorController = require("../controller/AuthorController");
+const Image = require("../controller/Imagem");
+
+router.post("/image", imageUpload.single("image"), Image.index);
 
 router.post("/cadBook/:author_id/list", BookController.postBook);
 router.get("/repo-book/:id", BookController.index);
